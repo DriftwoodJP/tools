@@ -1,0 +1,3 @@
+[submodule "markdown2pdf/style"]
+	path = markdown2pdf/style
+	url = https://gist.github.com/2554919.git
