@@ -7,7 +7,8 @@ rsync
 % npm install
 ```
 
+
 ## Usage
 
-DryRun: `grunt`
-Run: `grunt run`
+* DryRun: `grunt`
+* Run: `grunt run`
