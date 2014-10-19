@@ -30,11 +30,28 @@ module.exports = (grunt) ->
         options:
           src:  '~/Music/'
           dest: '/Volumes/LaCieHD1TB/Music/'
+      dropboxDryrun:
+        options:
+          src:  '~/Dropbox/'
+          dest: '/Volumes/LaCieHD1TB/Dropbox/'
+          dryRun: true
+      dropbox:
+        options:
+          src:  '~/Dropbox/'
+          dest: '/Volumes/LaCieHD1TB/Dropbox/'
 
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks "grunt-rsync"
 
   # Default task.
-  grunt.registerTask 'default', ['rsync:archiveDryrun', 'rsync:musicDryrun']
-  grunt.registerTask 'run', ['rsync:archive', 'rsync:music']
+  grunt.registerTask 'default', [
+    'rsync:archiveDryrun',
+    'rsync:musicDryrun',
+    'rsync:dropboxDryrun'
+  ]
+  grunt.registerTask 'run', [
+    'rsync:archive',
+    'rsync:music',
+    'rsync:dropbox'
+  ]
   return
