@@ -3,6 +3,8 @@ module.exports = (grunt) ->
 
   # Project configuration.
   grunt.initConfig
+    dir:
+      volume:    '/Volumes/LaCieHD1TB'
 
     # Task configuration.
     # pkg: grunt.file.readJSON("package.json")
@@ -15,30 +17,30 @@ module.exports = (grunt) ->
       archiveDryrun:
         options:
           src:  '~/Documents/Archives/'
-          dest: '/Volumes/LaCieHD1TB/Archives/'
+          dest: '<%= dir.volume %>/Archives/'
           dryRun: true
       archive:
         options:
           src:  '~/Documents/Archives/'
-          dest: '/Volumes/LaCieHD1TB/Archives/'
+          dest: '<%= dir.volume %>/Archives/'
       musicDryrun:
         options:
           src:  '~/Music/'
-          dest: '/Volumes/LaCieHD1TB/Music/'
+          dest: '<%= dir.volume %>/Music/'
           dryRun: true
       music:
         options:
           src:  '~/Music/'
-          dest: '/Volumes/LaCieHD1TB/Music/'
+          dest: '<%= dir.volume %>/Music/'
       dropboxDryrun:
         options:
           src:  '~/Dropbox/'
-          dest: '/Volumes/LaCieHD1TB/Dropbox/'
+          dest: '<%= dir.volume %>/Dropbox/'
           dryRun: true
       dropbox:
         options:
           src:  '~/Dropbox/'
-          dest: '/Volumes/LaCieHD1TB/Dropbox/'
+          dest: '<%= dir.volume %>/Dropbox/'
 
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks "grunt-rsync"
