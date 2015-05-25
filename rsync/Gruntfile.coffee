@@ -42,8 +42,16 @@ module.exports = (grunt) ->
           src:  '~/Dropbox/'
           dest: '<%= dir.volume %>/Dropbox/'
 
+    shell:
+      options:
+        stderr: false
+      diff:
+        command: 'bash diff-filename.sh'
+
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks "grunt-rsync"
+  grunt.loadNpmTasks "grunt-shell"
+
 
   # Default task.
   grunt.registerTask 'default', [
