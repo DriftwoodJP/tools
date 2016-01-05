@@ -10,5 +10,15 @@ rsync
 
 ## Usage
 
-* DryRun: `grunt`
-* Run: `grunt run`
+```
+# DryRun
+% grunt
+
+# Backup
+% grunt deploy
+```
+
+```
+# zsh diff-filename.sh
+% npm run diff
+```

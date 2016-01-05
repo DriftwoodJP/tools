@@ -43,15 +43,8 @@ module.exports = (grunt) ->
           src:  '<%= dir.home        %>/Dropbox/'
           dest: '<%= dir.volume_dest %>/Dropbox/'
 
-    shell:
-      options:
-        stderr: false
-      diff:
-        command: 'zsh diff-filename.sh'
-
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks "grunt-rsync"
-  grunt.loadNpmTasks "grunt-shell"
 
 
   # Default task.
@@ -60,7 +53,7 @@ module.exports = (grunt) ->
     'rsync:musicDryrun',
     'rsync:dropboxDryrun'
   ]
-  grunt.registerTask 'run', [
+  grunt.registerTask 'deploy', [
     'rsync:archive',
     'rsync:music',
     'rsync:dropbox'
